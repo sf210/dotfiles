@@ -1,3 +1,4 @@
+set exrc
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
@@ -38,11 +39,16 @@ let g:mapleader = " "
 nnoremap ; :
 nnoremap : ;
 
+"underline
+nnoremap <F4> yypVr-j
+inoremap <F4> <esc>yypVr-ji
+
 nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 " surround word in quotes
-:nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
 " delete to void
 "vnoremap <leader>p "_dP
 
