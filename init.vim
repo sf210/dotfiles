@@ -1,4 +1,3 @@
-set exrc
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
@@ -94,10 +93,11 @@ noremap <leader>pb :VipsqlSendBuffer<CR>
 noremap <leader>pc :VipsqlSendInterrupt<CR>
 
 call plug#begin('~/.config/nvim/plugged')
+    Plug 'rizzatti/dash.vim'
     Plug 'neovim/nvim-lspconfig'
     Plug 'christoomey/vim-tmux-runner'
 "    Plug 'tpope/vim-fugitive'
-"    Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-surround'
 "    Plug 'puremourning/vimspector'
     Plug 'mbbill/undotree'
     Plug 'szw/vim-maximizer'
