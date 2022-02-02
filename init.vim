@@ -57,6 +57,22 @@ nnoremap <leader>Y gg"+yG
 
 vnoremap <leader>d "_d
 
+" make :Wrap wrap lines without splitting word
+command! -nargs=* Wrap set wrap linebreak nolist
+
+" move around a wrapped line
+vmap <D-j> gj
+vmap <D-k> gk
+vmap <D-4> g$
+vmap <D-6> g^
+vmap <D-0> g^
+nmap <D-j> gj
+nmap <D-k> gk
+nmap <D-4> g$
+nmap <D-6> g^
+nmap <D-0> g^
+
+
 " " Panel switching
 map <leader>h :wincmd h<CR>
 map <leader>j :wincmd j<CR>
