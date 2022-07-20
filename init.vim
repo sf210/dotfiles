@@ -34,6 +34,17 @@ set shortmess+=c
 let mapleader = " "
 let g:mapleader = " "
 
+" toggle colorcolumn
+fun! ToggleCC()
+    if &cc == ''
+        set cc=80
+    else
+        set cc=
+    endif
+endfun
+
+nnoremap <F2> :call ToggleCC()<CR>
+
 " swap semicolon and colon in normal mode
 nnoremap ; :
 nnoremap : ;
@@ -112,7 +123,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'rizzatti/dash.vim'
     Plug 'neovim/nvim-lspconfig'
     Plug 'christoomey/vim-tmux-runner'
-"    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-surround'
 "    Plug 'puremourning/vimspector'
     Plug 'mbbill/undotree'
@@ -152,15 +163,3 @@ augroup FIETE
 augroup END
 
 
-lua << EOF
-require'lspconfig'.pyright.setup{}
-EOF
-
-lua << EOF
-require('psql').setup({
-  database_name = 'testdb',
-  user = 'sfiete',
-  hostname = 'localhost',
-  port = 5432,
-})
-EOF
